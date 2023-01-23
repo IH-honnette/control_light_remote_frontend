@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merienda&family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merienda&family=Poppins&family=Slackey&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>LILI</title>
 </head>
 <body>
@@ -15,10 +16,31 @@
         <div class="sideBar">
             <div class="logo">
                 <img src="images/sunriselogo.svg" alt="logo">
-                <img src="images/LILIlogo.svg" alt="logo">
+                <span style="
+                font-family: 'Slackey', cursive;
+                font-size: 1.8em;
+                margin-left: 0.6em;
+                ">LILI</span>
             </div>
-            <div class="profile"></div>
-            <div class="menu"></div>
+            <div class="profile">
+                <div class="profile_container">
+                <img src="images/profile.jfif" alt="Profile">
+                <p>Honnette,</p> <p style="
+                text-align: center; color:gray;
+                font-size: 12px;
+                ">SE</p>
+                </div>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><i class="fa fa-fw fa-home"></i><a href="#dashboard">Dashboard</a></li>
+                    <li><i class="fa fa-fw fa-home"></i><a href="#house">House</a></li>
+                    <li><i class="fa fa-fw fa-cog"></i><a href="#settings">Settings</a></li>
+                  </ul>
+            </div>
+            <div class="logout">
+                <i class="fa fa-fw fa-window-close"></i> Log out
+            </div>
         </div>
         <div class="rightBar">
             <div class="top_content">
@@ -28,15 +50,14 @@
                     </section>
                     <section class="section2">
                         <div><p>243.2</p> <span>light intensity</span></div>
-                        <div id="div2"><p>12.3 kwh</p> <span>units left</span></div>
+                        <div id="bar"></div>
+                        <div><p>12.3 kwh</p> <span>units left</span></div>
                      </section>
                     <section class="section3">
                         <p>Light status : <span>ON</span></p>
                     </section>   
                     <div class="section4">
-                        <div>
-                            
-                        </div>
+                        <div id="lighton">Turn Light Off</div>
                     </div> 
                 </div>
                 <div class="light_status">
@@ -44,11 +65,35 @@
                     <span class="light_status_text">Light On</span>
                 </div>
             </div>
-            <div class="power_usage">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+            <div class="bottom_content">
+                <div>
+                    <h3 
+                    style="
+                    color:#FCA635;font-weight: 700; 
+                    margin: 0.8em auto 1em;
+                    ">Power Usage</h3>
+                    <p style="color: #090332;font-weight: 700; 
+                    width: 150px;
+                    ">This shows the consumption of power</p>
+                </div>
+                <div class="row">
+                    <div><p style="margin-top: 0.6em;">Today</p><p style="font-weight: bolder;margin-top: 1em;">12.34 Kwh</p></div>
+                    <div><p style="margin-top: 0.6em;">Yesterday</p><p style="font-weight: bolder;margin-top: 1em;">12.34 Kwh</p></div>
+                    <div><p style="margin-top: 0.6em;">This Month</p><p style="font-weight: bolder;margin-top: 1em;">12.34 Kwh</p></div>
+                    <div style="
+                     background-image: linear-gradient(#090332, #F5F5F5);
+                     cursor: pointer;
+                     position: absolute;
+                     right: 5%;
+                    "><p style="
+                    margin-top: 0.6em;
+                    color: #fff;
+                    ">Get Stastics</p>
+                    <i 
+                    id="stastics-arrow"
+                    class="fa fa-fw fa-arrow-right"></i></div>
+                </div>
+                
             </div>
         </div>
     </div>
