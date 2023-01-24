@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merienda&family=Poppins&family=Slackey&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="index.js" type=text/javascript></script>
     <title>LILI</title>
 </head>
 <body>
@@ -54,15 +55,18 @@
                         <div><p>12.3 kwh</p> <span>units left</span></div>
                      </section>
                     <section class="section3">
-                        <p>Light status : <span>ON</span></p>
+                        <p>Light status : <span id="lightStatus">OFF</span></p>
                     </section>   
                     <div class="section4">
-                        <div id="lighton">Turn Light Off</div>
+                        <label class="switch">
+                            <input type="checkbox" id="toggleBtn" onclick="validate()">
+                            <span class="slider round"></span>
+                        </label>
                     </div> 
                 </div>
                 <div class="light_status">
-                    <img src="images/light-on.jpg" alt="light status">
-                    <span class="light_status_text">Light On</span>
+                    <img src="images/light-off.jpg" alt="light status" id="imageStatus">
+                    <span class="light_status_text" id="lightStatusText">Light Off</span>
                 </div>
             </div>
             <div class="bottom_content">
