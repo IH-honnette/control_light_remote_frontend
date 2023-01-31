@@ -1,5 +1,4 @@
 <?php
-
 if($_POST != null){
     if($_POST["state"] == "on"){
         writeOne();
