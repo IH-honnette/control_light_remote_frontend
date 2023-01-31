@@ -1,10 +1,29 @@
 let changeStateBtn = document.getElementById("changeState");
+function readData() {
+  console.log("Heree hhhh");
+  
+  let fetchRes = fetch("DB/backend.php/status", {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+    },
+  });
+
+  fetchRes.then(res =>
+      res.json()).then(d => {
+          console.log(d)
+    })
+
+}
 
 function validate(){
         if (document.getElementById('toggleBtn').checked){
+          readData();
             sendOn();
             updateUILightOn();
+           
         } else {
+          readData();
         sendOff();
         updateUILightOff();
         }
