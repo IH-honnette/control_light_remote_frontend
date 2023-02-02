@@ -1,32 +1,31 @@
 let changeStateBtn = document.getElementById("changeState");
+
 function readData() {
-  console.log("Heree hhhh");
-  
-  let fetchRes = fetch("DB/backend.php/status", {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-    },
+  console.log("Function reahceee..")
+ 
+   fetch("DB/backend.php")
+  .then(response => response.json())
+  .then(data => {
+    if(data.status =="off") {
+      updateUILightOff()
+    }else {updateUILightOn()}
+  })
+  .catch(error => {
+      console.error("Error:", error);
   });
 
-  fetchRes.then(res =>
-      res.json()).then(d => {
-          console.log(d)
-    })
+  setTimeout(function() {
+  readData();
+  }, 5000);
 
-}
+ }
 
 function validate(){
         if (document.getElementById('toggleBtn').checked){
-          readData();
             sendOn();
-            updateUILightOn();
-           
         } else {
-          readData();
         sendOff();
-        updateUILightOff();
-        }
+      }
 }
 function sendOn(){
     var details = {
@@ -75,9 +74,18 @@ function updateUILightOff() {
   document.getElementById("imageStatus").src ="images/light-off.jpg";
   document.getElementById("lightStatus").innerHTML = "OFF";
   document.getElementById("lightStatusText").innerHTML = "Light OFF";
+  if( document.getElementById('toggleBtn').checked == true){
+    console.log("block reached")
+    document.getElementById('toggleBtn').checked = false;
+  }
 }  
 function updateUILightOn() {
   document.getElementById("imageStatus").src ="images/light-on.jpg";
   document.getElementById("lightStatus").innerHTML = "ON";
   document.getElementById("lightStatusText").innerHTML = "Light ON";
-}  
+  if( document.getElementById('toggleBtn').checked == false){
+    console.log("block reached")
+    document.getElementById('toggleBtn').checked = true;
+  }
+} 
+readData();

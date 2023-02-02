@@ -101,17 +101,5 @@
             </div>
         </div>
     </div>
-    <script>
-    function readData() {
-        fetch("DB/backend.php")
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-        })
-        .catch(error => {
-            console.error("Error:", error);
-        });
-    }
-    </script>
 </body>
 </html>
